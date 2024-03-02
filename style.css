@@ -1,0 +1,237 @@
+* {
+    padding:  0;
+    margin: 0;
+    box-sizing:  border-box;
+    list-style: none;
+    text-decoration:  none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #435058;
+}
+img{
+    width: 100%;
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #A3BBAD;
+    align-items: center;
+    padding: 0 40px;
+    /* border-radius: 0 0 10px 10px; */
+    margin: 0 auto;
+}
+
+.logo{
+    width: 120px;
+    margin-top: 8px;
+}
+
+nav .logo{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    margin: 0 2px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.2s;
+    border-radius: 30px;
+}
+
+nav ul li a:hover{
+    background: rgb(237, 234, 234);
+}
+nav ul li a.active{
+    background: rgb(238, 235, 235);
+}
+
+.burger{
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.burger:hover{
+    background: #f6f4ff;
+}
+
+.burger div{
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #212526;
+}
+
+@media only screen and (max-width: 1100px){
+    header {
+        width: 100%;
+        padding: 0 20px;
+    }
+    nav {
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 280px;
+        height:  100vh;
+        background-color: #fefefe;
+        transform: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    #nav_check:checked ~ nav {
+        left: 0;
+    }
+    nav.logo {
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+    nav ul li a {
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.image-generator{
+    height: 50vh;
+    background: url("artwork.png") no-repeat center center/cover;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+}
+
+.image-generator::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.image-generator .content{
+    color: #f6f4ff;
+    padding: 0 15px;
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+}
+
+.image-generator h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.image-generator p{
+    font-size: 1.35rem;
+    margin-top: 10px;
+}
+
+.image-generator .prompt{
+    height: 56px;
+    padding: 6px;
+    display: flex;
+    border-radius: 30px;
+    background: #fefefe;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prompt .prompt-input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    background: none;
+    padding: 0 17px;
+    border-radius:30px ;
+
+}
+
+.prompt .controls{
+    display: flex;
+    height: 100%;
+    gap: 15px;
+}
+
+.prompt .img-quantity {
+    outline: none;
+    border: none;
+    height: 44px;
+    background: none;
+    font-size: 1rem;
+}
+
+.prompt .generate-btn{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    background: #4949E7;
+    padding: 0px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.generated-images{
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+    max-width: 1250px;
+    margin: 50px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.generated-images .img-card{
+    width: 285px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5;
+    overflow: hidden;
+}
+
+.generated-images .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit:  cover;
+}
+
+.generated-images .img-card .download-btn
+
+.generated-images .img-card .download-btn img{
+    width: 14px;
+    height: 14px;
+}

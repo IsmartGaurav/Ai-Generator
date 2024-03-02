@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ai Image Generator</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <section class="image-generator">
+        <div class="content">
+                <h1>Ai Image Generator Tool</h1>
+                <p>onvert your text into an image within a second using this Ai image generator</p>
+                <form action="#" class="prompt">
+                    <input type="text" class="prompt-input" placeholder="Describe your image here" required>
+                    <div class="controls">
+                        <select class="img-quantity">
+                            <option value="1">1 Image</option>
+                            <option value="2">2 Images</option>
+                            <option value="3">3 Images</option>
+                            <option value="4" selected>4 Images</option>
+                        </select>
+                        <button type="submit" class="generate-btn">Generate</button>
+                    </div>
+                </form>
+        </div>
+    </section>
+    <section class="generated-images">
+        <div class="img-card">
+            <img src="1.webp" alt="" srcset="">
+            <a href="#" class="download-btn">
+                <img src="download.svg" alt="download icon">
+            </a>
+        </div>
+        <div class="img-card">
+            <img src="2.webp" alt="" srcset="">
+            <a href="#" class="download-btn">
+                <img src="download.svg" alt="download icon">
+            </a>
+        </div>
+        <div class="img-card">
+            <img src="3.webp" alt="" srcset="">
+            <a href="#" class="download-btn">
+                <img src="download.svg" alt="download icon">
+            </a>
+        </div>
+        <div class="img-card">
+            <img src="4.webp" alt="" srcset="">
+            <a href="#" class="download-btn">
+                <img src="download.svg" alt="download icon">
+            </a>
+        </div>
+    </section>
+</body>
+</html>
+
