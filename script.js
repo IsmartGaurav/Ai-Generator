@@ -1,4 +1,4 @@
-const token = "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";
+const token = "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";
 const promptInput = document.getElementById("input");
 const generateBtn = document.getElementById("generate-btn");
 const imageContainer = document.getElementById("image-container"); // Get the container
