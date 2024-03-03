@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Ai Image Generator</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -31,48 +34,42 @@
     </header>
     <section class="image-generator">
         <div class="content">
-                <h1>Ai Image Generator Tool</h1>
-                <p>onvert your text into an image within a second using this Ai image generator</p>
-                <form action="#" class="prompt">
-                    <input type="text" class="prompt-input" placeholder="Describe your image here" required>
-                    <div class="controls">
-                        <select class="img-quantity">
-                            <option value="1">1 Image</option>
-                            <option value="2">2 Images</option>
-                            <option value="3">3 Images</option>
-                            <option value="4" selected>4 Images</option>
-                        </select>
-                        <button type="submit" class="generate-btn">Generate</button>
-                    </div>
-                </form>
+            <h1>Ai Image Generator Tool</h1>
+            <p>Convert your text into an image within a second using this Ai image generator</p>
+            <form action="#" class="prompt">
+                <input type="text" class="prompt-input" id="input" placeholder="Describe your image here" required>
+                <div class="controls">
+                    <button class="button" id="generate-btn">
+                        <svg
+                          viewBox="0 0 16 16"
+                          class="bi bi-lightning-charge-fill"
+                          fill="currentColor"
+                          height="16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                          ></path></svg
+                        >Generate
+                      </button>
+                </div>
+            </form>
         </div>
     </section>
     <section class="generated-images">
-        <div class="img-card">
-            <img src="1.webp" alt="" srcset="">
-            <a href="#" class="download-btn">
-                <img src="download.svg" alt="download icon">
-            </a>
-        </div>
-        <div class="img-card">
-            <img src="2.webp" alt="" srcset="">
-            <a href="#" class="download-btn">
-                <img src="download.svg" alt="download icon">
-            </a>
-        </div>
-        <div class="img-card">
-            <img src="3.webp" alt="" srcset="">
-            <a href="#" class="download-btn">
-                <img src="download.svg" alt="download icon">
-            </a>
-        </div>
-        <div class="img-card">
-            <img src="4.webp" alt="" srcset="">
-            <a href="#" class="download-btn">
-                <img src="download.svg" alt="download icon">
-            </a>
-        </div>
+        <div id="image-container"></div>
     </section>
+    <div class="image">
+        <center><h1>Image Gallery</h1></center>
+    </div>
+    <section class="image-gallery">
+        <div class="img-card"><img src="1.webp" alt="image"></div>
+        <div class="img-card"><img src="2.webp" alt="image"></div>
+        <div class="img-card"><img src="3.webp" alt="image"></div>
+        <div class="img-card"><img src="4.webp" alt="image"></div>
+      </section>
 </body>
+
 </html>
 
