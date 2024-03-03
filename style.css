@@ -8,7 +8,9 @@
 }
 
 body {
-    background-color: #435058;
+    background-color: #ffffff;
+    align-items:  center;
+    justify-content:  center;
 }
 img{
     width: 100%;
@@ -18,10 +20,9 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background: #A3BBAD;
+    background: #ffffff;
     align-items: center;
     padding: 0 40px;
-    /* border-radius: 0 0 10px 10px; */
     margin: 0 auto;
 }
 
@@ -118,8 +119,64 @@ nav ul li a.active{
     }
 }
 
+
+.button {
+    --bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --edge-light: hsla(0, 0%, 50%, 0.8);
+    --text-light: rgba(255, 255, 255, 0.4);
+    --back-color: 240, 40%;
+  
+    cursor: pointer;
+    padding: 0.1em 1em;
+    border-radius: 1.1em;
+    min-height: 2.4em;
+    min-width: 3em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    font-weight: bold;
+  
+    background: linear-gradient(
+      140deg,
+      hsla(var(--back-color), 50%, 1) min(2em, 20%),
+      hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+    );
+    color: hsla(0, 0%, 90%);
+    border: 0;
+    box-shadow: inset 0.4px 1px 4px var(--edge-light);
+  
+    transition: all 0.1s var(--bezier);
+  }
+  
+  .button:hover {
+    --edge-light: hsla(0, 0%, 50%, 1);
+    text-shadow: 0px 0px 10px var(--text-light);
+    box-shadow: inset 0.4px 1px 4px var(--edge-light),
+      2px 4px 8px hsla(0, 0%, 0%, 0.295);
+    transform: scale(1);
+  }
+  
+  .button:active {
+    --text-light: rgba(255, 255, 255, 1);
+  
+    background: linear-gradient(
+      140deg,
+      hsla(var(--back-color), 50%, 1) min(2em, 20%),
+      hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+    );
+    box-shadow: inset 0.4px 1px 8px var(--edge-light),
+      0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+    text-shadow: 0px 0px 20px var(--text-light);
+    color: hsla(0, 0%, 100%, 1);
+    letter-spacing: 0.1em;
+    transform: scale(1);
+  }
 .image-generator{
-    height: 50vh;
+    height: 45vh;
     background: url("artwork.png") no-repeat center center/cover;
     display: flex;
     position: relative;
@@ -139,7 +196,7 @@ nav ul li a.active{
 }
 
 .image-generator .content{
-    color: #f6f4ff;
+    color: #ffffff;
     padding: 0 15px;
     max-width: 760px;
     text-align: center;
@@ -183,7 +240,7 @@ nav ul li a.active{
 .prompt .controls{
     display: flex;
     height: 100%;
-    gap: 15px;
+    gap: 10px;
 }
 
 .prompt .img-quantity {
@@ -206,8 +263,41 @@ nav ul li a.active{
     border-radius: 30px;
 }
 
+
+.image-gallery {
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1250px;
+  }
+  .image-gallery .img-card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    width: 285px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .image-gallery .img-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  .image-gallery .img-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
 .generated-images{
     display: flex;
+    flex-wrap:  wrap;
     gap: 15px;
     padding: 0 15px;
     max-width: 1250px;
@@ -217,10 +307,16 @@ nav ul li a.active{
 }
 
 .generated-images .img-card{
-    width: 285px;
+    height: 512px;
+    width: 512px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     aspect-ratio: 1 / 1;
     border-radius: 5;
     overflow: hidden;
+    position: relative;
+    background:#000000;
 }
 
 .generated-images .img-card img{
@@ -228,10 +324,73 @@ nav ul li a.active{
     height: 100%;
     object-fit:  cover;
 }
+.generated-images .img-card.loading img{
+    height: 80px;
+    width: 80px;
+}
+.generated-images .img-card .download-btn{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: wheat;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
 
-.generated-images .img-card .download-btn
+.generated-images .img-card:not(.loading):hover .download-btn{
+    background: #f6f4ff;
+    cursor: pointer;
+    display: flex;
+}
 
 .generated-images .img-card .download-btn img{
     width: 14px;
     height: 14px;
+}
+
+@media screen and (max-width: 760px){
+    .image-generator h1{
+        font-size:  1.8rem;
+    }
+    .image-generator p{
+        font-size: 1rem;
+    }
+
+    .image-generator .prompt{
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+    }
+    .image-generator .controls{
+        height: 40px;
+        margin-top: -40px;
+        align-items: center;
+        justify-content: right;
+    }
+    .image-generator .img-quantity{
+        color: #fff;
+    }
+    .image-generator .img-quantity option{
+        color: #000;
+    }
+    .image-generator .generate-btn{
+        height: 100%;
+    }
+    .generated-images .img-card:not(.loading) .download-btn{
+        display: flex;
+    }
+    .generated-images{
+        margin-top:  30px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .generated-images .img-card{
+        width: 100%;
+    }
 }
